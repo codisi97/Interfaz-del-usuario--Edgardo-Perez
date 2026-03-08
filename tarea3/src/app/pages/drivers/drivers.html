@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-gray-100 p-4 lg:p-6">
+  <p class="text-sm text-gray-500 mb-1">Portal / Conductores</p>
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">Conductores</h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-6">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+      <p class="text-sm text-gray-500">Total de conductores</p>
+      <h2 class="text-3xl font-bold text-gray-800 mt-2">6</h2>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+    <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between p-4 border-b border-gray-200">
+      <h2 class="font-semibold text-gray-800">Lista de conductores</h2>
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-4 py-2 rounded-full">
+        Crear conductor
+      </button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-indigo-600 text-white">
+          <tr>
+            <th class="p-3">Correo</th>
+            <th class="p-3">Nombre</th>
+            <th class="p-3">Rol</th>
+            <th class="p-3">Estado</th>
+            <th class="p-3">Último inicio de sesión</th>
+            <th class="p-3">Fecha de registro</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="hover:bg-gray-50">
+            <td class="p-3">student@unitec.edu</td>
+            <td class="p-3">Estudiante UNITEC</td>
+            <td class="p-3">Conductor</td>
+            <td class="p-3">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">
+                Inactivo
+              </span>
+            </td>
+            <td class="p-3">23/12/2025 14:00:39</td>
+            <td class="p-3">23-Dic-2025</td>
+            <td class="p-3"></td>
+          </tr>
+
+          <tr class="hover:bg-gray-50">
+            <td class="p-3">student@unitec.edu</td>
+            <td class="p-3">Estudiante UNITEC</td>
+            <td class="p-3">Conductor</td>
+            <td class="p-3">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-lime-100 text-lime-700">
+                Activo
+              </span>
+            </td>
+            <td class="p-3">23/12/2025 14:00:39</td>
+            <td class="p-3">23-Dic-2025</td>
+            <td class="p-3"></td>
+          </tr>
+
+          <tr class="hover:bg-gray-50">
+            <td class="p-3">student@unitec.edu</td>
+            <td class="p-3">Estudiante UNITEC</td>
+            <td class="p-3">Conductor</td>
+            <td class="p-3">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-lime-100 text-lime-700">
+                Activo
+              </span>
+            </td>
+            <td class="p-3">23/12/2025 14:00:39</td>
+            <td class="p-3">23-Dic-2025</td>
+            <td class="p-3"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
