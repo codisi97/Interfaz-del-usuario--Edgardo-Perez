@@ -4,7 +4,7 @@ import { Driver } from '../../interfaces/drivers';
 
 @Component({
   selector: 'app-drivers-cards',
-  standalone:true,
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './drivers-cards.html',
   styleUrl: './drivers-cards.css',
@@ -39,8 +39,8 @@ export class DriversCards {
       plate: '586 5GX',
       phone: '0903001276',
       location: 'Saigon',
-      rating: 4.8,
-      totalReviews: 1980,
+      rating: 4.5,
+      totalReviews: 2256,
       avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
       status: 'Disponible'
     }

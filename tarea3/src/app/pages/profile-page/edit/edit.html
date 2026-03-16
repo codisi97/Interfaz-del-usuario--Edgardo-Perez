@@ -1,0 +1,85 @@
+<div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-4xl bg-white rounded-lg border border-gray-300 shadow-sm p-6">
+    <div class="h-20 rounded-t-lg bg-gradient-to-r from-blue-100 to-yellow-50 mb-6"></div>
+
+    <h2 class="text-xl font-semibold mb-6">Editar perfil</h2>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSave()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm mb-1">Nombres</label>
+        <input
+          type="text"
+          formControlName="nombres"
+          class="w-full border rounded px-3 py-2"
+          [ngClass]="{
+            'border-gray-300': !(nombres?.invalid && nombres?.touched),
+            'border-red-500': nombres?.invalid && nombres?.touched
+          }"
+        />
+        @if (nombres?.touched && nombres?.errors?.['required']) {
+          <p class="text-red-500 text-sm mt-1">El nombre es obligatorio.</p>
+        }
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Apellidos</label>
+        <input
+          type="text"
+          formControlName="apellidos"
+          class="w-full border rounded px-3 py-2"
+          [ngClass]="{
+            'border-gray-300': !(apellidos?.invalid && apellidos?.touched),
+            'border-red-500': apellidos?.invalid && apellidos?.touched
+          }"
+        />
+        @if (apellidos?.touched && apellidos?.errors?.['required']) {
+          <p class="text-red-500 text-sm mt-1">El apellido es obligatorio.</p>
+        }
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Número de teléfono</label>
+        <input type="text" formControlName="telefono" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Correo electrónico</label>
+        <input
+          type="email"
+          formControlName="correo"
+          class="w-full border rounded px-3 py-2"
+          [ngClass]="{
+            'border-gray-300': !(correo?.invalid && correo?.touched),
+            'border-red-500': correo?.invalid && correo?.touched
+          }"
+        />
+        @if (correo?.touched && correo?.errors?.['required']) {
+          <p class="text-red-500 text-sm mt-1">El correo es obligatorio.</p>
+        }
+        @if (correo?.touched && correo?.errors?.['email']) {
+          <p class="text-red-500 text-sm mt-1">Correo inválido.</p>
+        }
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Número de identidad</label>
+        <input type="text" formControlName="identidad" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm mb-1">Fecha de nacimiento</label>
+        <input type="date" formControlName="fechaNacimiento" class="w-full border border-gray-300 rounded px-3 py-2" />
+      </div>
+
+      <div class="md:col-span-2 flex justify-end">
+        <button
+          type="submit"
+          [disabled]="profileForm.invalid"
+          class="bg-blue-500 text-white px-5 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
