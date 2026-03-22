@@ -1,0 +1,29 @@
+<p>driver-card works!</p>
+<div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+  <p class="text-lg font-semibold text-gray-800">Tarjeta de conductor</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+  <div class="flex items-start gap-4">
+    <img
+      [src]="driver.avatarUrl"
+      [alt]="driver.name"
+      class="w-16 h-16 rounded-full object-cover"
+    />
+
+    <div class="flex-1">
+      <h3 class="text-lg font-semibold text-gray-800">{{ driver.name }}</h3>
+      <p class="text-sm text-gray-500">{{ driver.carModel }}</p>
+      <p class="text-sm text-gray-500">Placa: {{ driver.plate }}</p>
+      <p class="text-sm text-gray-500">Tel: {{ driver.phone }}</p>
+      <p class="text-sm text-gray-500">Ubicación: {{ driver.location }}</p>
+      <p class="text-sm text-gray-500">Rating: {{ driver.rating }}</p>
+      <p class="text-sm text-gray-500">Reviews: {{ driver.totalReviews }}</p>
+
+      <span class="inline-block mt-3 px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-700">
+        {{ driver.status }}
+      </span>
+    </div>
+  </div>
+</div>
+

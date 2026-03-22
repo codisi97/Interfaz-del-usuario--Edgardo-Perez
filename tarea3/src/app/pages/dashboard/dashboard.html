@@ -1,12 +1,7 @@
 <div class="min-h-screen bg-gray-50">
-
-  
   <div class="flex flex-col lg:flex-row">
 
-    
-    <aside class="bg-white p-4 border-b lg:border-b-0 lg:border-r
-                  w-full lg:w-64">
-
+    <aside class="bg-white p-4 border-b lg:border-b-0 lg:border-r w-full lg:w-64">
       <h1 class="text-xl font-bold mb-4">
         Dashboard
       </h1>
@@ -17,12 +12,9 @@
         <a class="p-2 rounded hover:bg-gray-100">Reportes</a>
         <a class="p-2 rounded hover:bg-gray-100">Configuración</a>
       </nav>
-
     </aside>
 
-
     <main class="flex-1 p-6">
-
       <h2 class="text-2xl font-semibold">
         Panel de Control
       </h2>
@@ -31,32 +23,33 @@
         Resumen general del sistema
       </p>
 
-<section class="mt-6">
-  <div class="flex flex-col gap-4 lg:flex-row">
+      <section class="mt-6">
+        <div class="flex flex-col gap-4 lg:flex-row">
+          <app-stat-card
+            title="Conductores registrados"
+            value="128">
+          </app-stat-card>
 
-    
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Conductores registrados</p>
-      <p class="text-3xl font-bold mt-2">128</p>
-    </div>
+          <app-stat-card
+            title="Viajes realizados"
+            value="3,540">
+          </app-stat-card>
 
-   
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Viajes realizados</p>
-      <p class="text-3xl font-bold mt-2">3,540</p>
-    </div>
+          <app-stat-card
+            title="Ganancias totales"
+            value="$ 12,480">
+          </app-stat-card>
+        </div>
+      </section>
 
-    
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Ganancias totales</p>
-      <p class="text-3xl font-bold mt-2">$ 12,480</p>
-    </div>
-
-  </div>
-</section>
-
+      <section class="mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          @for (driver of drivers; track driver.name) {
+            <app-driver-card [driver]="driver"></app-driver-card>
+          }
+        </div>
+      </section>
     </main>
 
   </div>
-
 </div>

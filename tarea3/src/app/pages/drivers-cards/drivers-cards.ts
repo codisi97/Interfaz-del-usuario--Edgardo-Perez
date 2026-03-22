@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Driver } from '../../interfaces/drivers';
+import { Drivers } from '../drivers/drivers';
 
 @Component({
   selector: 'app-drivers-cards',
@@ -10,7 +10,7 @@ import { Driver } from '../../interfaces/drivers';
   styleUrl: './drivers-cards.css',
 })
 export class DriversCards {
-  drivers: Driver[] = [
+  drivers: Drivers[] = [
     {
       name: 'Michael Nguyen',
       carModel: 'Pontiac - White - 586 5GX',
@@ -46,10 +46,11 @@ export class DriversCards {
     }
   ];
 
-  trackByName(index: number, driver: Driver): string {
+  trackByName(index: number, driver: Drivers): string {
     return driver.name;
   }
 
-  
-
+  getStars(rating: number): number[] {
+    return Array(Math.floor(rating)).fill(0);
+  }
 }
