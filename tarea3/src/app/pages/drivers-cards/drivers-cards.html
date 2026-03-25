@@ -1,49 +1,68 @@
-<p>drivers-cards works!</p>
+<div class="min-h-screen bg-gray-100">
+  <div class="flex flex-col lg:flex-row">
+    
+    <app-sidebar></app-sidebar>
 
-<div class="min-h-screen bg-gray-100 p-6">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-xl font-semibold text-gray-800 mb-6">Conductores disponibles</h2>
+    <main class="flex-1 p-6" aria-label="Contenido principal de monitoreo de conductores">
+      <div class="max-w-7xl mx-auto">
+        
+        <header class="mb-6">
+          <h1 class="text-xl font-semibold text-gray-800">Conductores disponibles</h1>
+        </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      @for (driver of drivers; track trackByName($index, driver)) {
-        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-          <div class="flex items-start gap-4">
-            <img
-              [src]="driver.avatarUrl"
-              [alt]="driver.name"
-              class="w-16 h-16 rounded-full object-cover"
-            />
+        <section
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          aria-label="Lista de conductores disponibles"
+        >
+          @for (driver of drivers; track trackByName($index, driver)) {
+            <article class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+              <div class="flex items-start gap-4">
+                <img
+                  [src]="driver.avatarUrl"
+                  [alt]="'Foto de perfil de ' + driver.name"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
 
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-800">{{ driver.name }}</h3>
-              <p class="text-sm text-gray-500">{{ driver.carModel }}</p>
-              <p class="text-sm text-gray-500">Placa: {{ driver.plate }}</p>
-              <p class="text-sm text-gray-500">Tel: {{ driver.phone }}</p>
-              <p class="text-sm text-gray-500">Ubicación: {{ driver.location }}</p>
+                <div class="flex-1">
+                  <h2 class="text-lg font-semibold text-gray-800">{{ driver.name }}</h2>
+                  <p class="text-sm text-gray-700">{{ driver.carModel }}</p>
+                  <p class="text-sm text-gray-700">Placa: {{ driver.plate }}</p>
+                  <p class="text-sm text-gray-700">Tel: {{ driver.phone }}</p>
+                  <p class="text-sm text-gray-700">Ubicación: {{ driver.location }}</p>
 
-              <div class="flex items-center gap-2 mt-2">
-                <span class="text-yellow-400 text-sm">
-                  @for (star of getStars(driver.rating); track $index) {
-                    <span>{{ star }}</span>
-                  }
-                </span>
-                <span class="text-sm text-gray-700 font-medium">{{ driver.rating }}</span>
-                <span class="text-sm text-gray-400">/ {{ driver.totalReviews }}</span>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span
+                      class="text-yellow-500 text-sm"
+                      [attr.aria-label]="'Calificación de ' + driver.name + ': ' + driver.rating + ' estrellas'"
+                    >
+                      @for (star of getStars(driver.rating); track $index) {
+                        <span aria-hidden="true">★</span>
+                      }
+                    </span>
+                    <span class="text-sm text-gray-800 font-medium">{{ driver.rating }}</span>
+                    <span class="text-sm text-gray-600">/ {{ driver.totalReviews }}</span>
+                  </div>
+
+                  <span
+                    class="inline-block mt-3 px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-700"
+                    [attr.aria-label]="'Estado del conductor: ' + driver.status"
+                  >
+                    {{ driver.status }}
+                  </span>
+                </div>
               </div>
-
-              <span
-                class="inline-block mt-3 px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-700"
-              >
-                {{ driver.status }}
-              </span>
+            </article>
+          } @empty {
+            <div
+              class="col-span-full text-center bg-white border border-gray-200 rounded-xl p-6 text-gray-700"
+              aria-live="polite"
+            >
+              No hay conductores disponibles en este momento.
             </div>
-          </div>
-        </div>
-      } @empty {
-        <div class="col-span-full text-center bg-white border border-gray-200 rounded-xl p-6 text-gray-500">
-          No hay conductores disponibles en este momento.
-        </div>
-      }
-    </div>
+          }
+        </section>
+      </div>
+    </main>
+
   </div>
 </div>

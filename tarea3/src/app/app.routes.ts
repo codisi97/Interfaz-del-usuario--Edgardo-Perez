@@ -9,7 +9,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   { path: 'dashboard', component: Dashboard },
   { path: 'drivers', component: DriversComponent },
-  { path: 'drivers/cards', component: DriversComponent },
+  { path: 'drivers/cards', component: DriversCards },
   { path: 'auth/login', component: Auth },
   { path: 'profile/edit', component: Edit },
   {path: 'drivers/cards', component:DriversCards}

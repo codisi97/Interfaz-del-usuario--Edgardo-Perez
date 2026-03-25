@@ -1,0 +1,59 @@
+<aside
+  class="w-full lg:w-64 lg:h-screen lg:sticky lg:top-0 bg-white border-b lg:border-b-0 lg:border-r p-4
+         grid grid-rows-[auto_1fr_auto]"
+  aria-label="Barra lateral de navegación"
+>
+
+  <header>
+    <h2 class="text-xl font-bold mb-6 text-gray-800">Portal Taxis</h2>
+  </header>
+
+  <nav class="flex flex-col gap-2" aria-label="Menú principal">
+
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="bg-gray-200 font-semibold"
+      class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 text-gray-800"
+      aria-label="Ir al dashboard"
+    >
+      <span class="material-icons text-gray-600" aria-hidden="true">dashboard</span>
+      Dashboard
+    </a>
+
+    <a
+      routerLink="/drivers"
+      routerLinkActive="bg-gray-200 font-semibold"
+      class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 text-gray-800"
+      aria-label="Ir a conductores"
+    >
+      <span class="material-icons text-gray-600" aria-hidden="true">group</span>
+      Conductores
+    </a>
+
+    <a
+      routerLink="/drivers/cards"
+      routerLinkActive="bg-gray-200 font-semibold"
+      class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 text-gray-800"
+      aria-label="Ir a monitoreo de conductores"
+    >
+      <span class="material-icons text-gray-600" aria-hidden="true">monitor</span>
+      Monitoreo
+    </a>
+
+    <a
+      routerLink="/profile/edit"
+      routerLinkActive="bg-gray-200 font-semibold"
+      class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 text-gray-800"
+      aria-label="Ir a editar perfil"
+    >
+      <span class="material-icons text-gray-600" aria-hidden="true">person</span>
+      Perfil
+    </a>
+
+  </nav>
+
+  <footer class="text-sm text-gray-600 mt-6 lg:mt-0" aria-label="Información del usuario">
+    Usuario
+  </footer>
+
+</aside>

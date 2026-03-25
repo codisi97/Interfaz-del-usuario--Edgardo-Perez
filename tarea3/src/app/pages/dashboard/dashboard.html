@@ -1,62 +1,100 @@
 <div class="min-h-screen bg-gray-50">
-
-  
   <div class="flex flex-col lg:flex-row">
-
     
-    <aside class="bg-white p-4 border-b lg:border-b-0 lg:border-r
-                  w-full lg:w-64">
+    <app-sidebar></app-sidebar>
 
-      <h1 class="text-xl font-bold mb-4">
-        Dashboard
-      </h1>
+    <main class="flex-1 p-6" aria-label="Contenido principal del dashboard">
+      <header class="mb-6">
+        <h1 class="text-2xl font-semibold text-gray-800">Panel de Control</h1>
+        <p class="text-gray-700">Resumen general del sistema</p>
+      </header>
 
-      <nav class="flex flex-col gap-2">
-        <a class="p-2 rounded hover:bg-gray-100">Inicio</a>
-        <a class="p-2 rounded hover:bg-gray-100">Usuarios</a>
-        <a class="p-2 rounded hover:bg-gray-100">Reportes</a>
-        <a class="p-2 rounded hover:bg-gray-100">Configuración</a>
-      </nav>
+      <section class="mt-6" aria-label="Resumen de métricas">
+        <div class="flex flex-col gap-4 lg:flex-row">
+          <article class="bg-white p-5 rounded-lg border flex-1" aria-label="Conductores registrados">
+            <p class="text-sm text-gray-700">Conductores registrados</p>
+            <p class="text-3xl font-bold mt-2 text-gray-900">128</p>
+          </article>
 
-    </aside>
+          <article class="bg-white p-5 rounded-lg border flex-1" aria-label="Viajes realizados">
+            <p class="text-sm text-gray-700">Viajes realizados</p>
+            <p class="text-3xl font-bold mt-2 text-gray-900">3,540</p>
+          </article>
 
+          <article class="bg-white p-5 rounded-lg border flex-1" aria-label="Ganancias totales">
+            <p class="text-sm text-gray-700">Ganancias totales</p>
+            <p class="text-3xl font-bold mt-2 text-gray-900">$ 12,480</p>
+          </article>
+        </div>
+      </section>
 
-    <main class="flex-1 p-6">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6" aria-label="Secciones principales del dashboard">
+        <article class="bg-white p-5 rounded-lg border">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">Conductores</h2>
+            <button
+              class="text-sm text-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-gray-300 px-2 py-1"
+              type="button"
+              aria-label="Mostrar más conductores"
+            >
+              ⌄
+            </button>
+          </div>
 
-      <h2 class="text-2xl font-semibold">
-        Panel de Control
-      </h2>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Foto de perfil de Michael Nguyen"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-medium text-sm text-gray-800">Michael Nguyen</p>
+                <p class="text-xs text-gray-700">user@gmail.com</p>
+              </div>
+            </div>
 
-      <p class="text-gray-600 mb-6">
-        Resumen general del sistema
-      </p>
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Foto de perfil de Loki Bright"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-medium text-sm text-gray-800">Loki Bright</p>
+                <p class="text-xs text-gray-700">user@gmail.com</p>
+              </div>
+            </div>
 
-<section class="mt-6">
-  <div class="flex flex-col gap-4 lg:flex-row">
+            <div class="flex items-center gap-3">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Foto de perfil de Dominique Ch."
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-medium text-sm text-gray-800">Dominique Ch.</p>
+                <p class="text-xs text-gray-700">user@gmail.com</p>
+              </div>
+            </div>
+          </div>
 
-    
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Conductores registrados</p>
-      <p class="text-3xl font-bold mt-2">128</p>
-    </div>
+          <a
+            class="inline-block mt-4 text-sm text-amber-700 hover:underline focus:outline-none focus:ring-2 focus:ring-amber-300 rounded"
+            href="#"
+            aria-label="Ver todos los conductores"
+          >
+            Todos los conductores →
+          </a>
+        </article>
 
-   
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Viajes realizados</p>
-      <p class="text-3xl font-bold mt-2">3,540</p>
-    </div>
-
-    
-    <div class="bg-white p-5 rounded-lg border flex-1">
-      <p class="text-sm text-gray-500">Ganancias totales</p>
-      <p class="text-3xl font-bold mt-2">$ 12,480</p>
-    </div>
-
-  </div>
-</section>
-
+        <article class="bg-white p-5 rounded-lg border">
+          <h2 class="text-lg font-semibold mb-4 text-gray-800">Últimos viajes</h2>
+          <div class="flex items-center justify-center h-40 text-sm text-gray-700" aria-live="polite">
+            No hay viajes disponibles.
+          </div>
+        </article>
+      </section>
     </main>
-
   </div>
-
 </div>

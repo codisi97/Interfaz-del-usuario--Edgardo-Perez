@@ -1,11 +1,23 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Driver } from '../../interfaces/drivers';
+import { Sidebar } from '../../components/shared/sidebar/sidebar';
+
+interface Driver {
+  name: string;
+  carModel: string;
+  plate: string;
+  phone: string;
+  location: string;
+  rating: number;
+  totalReviews: number;
+  avatarUrl: string;
+  status: string;
+}
 
 @Component({
   selector: 'app-drivers-cards',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,Sidebar],
   templateUrl: './drivers-cards.html',
   styleUrl: './drivers-cards.css',
 })
@@ -50,6 +62,7 @@ export class DriversCards {
     return driver.name;
   }
 
-  
-
+  getStars(rating: number): number[] {
+    return Array(Math.floor(rating)).fill(0);
+  }
 }

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,Validators,ReactiveFormsModule } from '@angular/forms';
+import { Sidebar } from '../../../components/shared/sidebar/sidebar';
 
 @Component({
   selector: 'app-edit',
   standalone:true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,Sidebar],
   templateUrl: './edit.html',
   styleUrl: './edit.css',
 })

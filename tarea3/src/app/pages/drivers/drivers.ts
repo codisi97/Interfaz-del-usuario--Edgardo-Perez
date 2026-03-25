@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Sidebar } from '../../components/shared/sidebar/sidebar';
+import { CommonModule } from '@angular/common';
 
 export interface Drivers {
   name: string;
@@ -14,7 +16,7 @@ export interface Drivers {
 
 @Component({
   selector: 'app-drivers',
-  imports: [],
+  imports: [Sidebar,CommonModule],
   templateUrl: './drivers.html',
   styleUrl: './drivers.css',
 })
